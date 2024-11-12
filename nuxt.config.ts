@@ -1,8 +1,10 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import pkg from './package.json'
+import { createResolver } from '@nuxt/kit'
+import pkg from '../package.json'
+
+const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
-
   modules: [
     '@nuxt/ui-pro',
     '@nuxt/content',
@@ -12,6 +14,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
   ],
+
   app: {
     rootAttrs: {
       'vaul-drawer-wrapper': '',
@@ -27,9 +30,23 @@ export default defineNuxtConfig({
     database: {
       type: 'd1',
       binding: 'DB',
+      // type: 'libsql',
+      // url: process.env.TURSO_DATABASE_URL!,
+      // authToken: process.env.TURSO_AUTH_TOKEN!,
+    },
+  },
+
+  mdc: {
+    highlight: {
+      noApiRoute: false,
     },
     studio: {
       enabled: true,
+      dev: true,
+      gitInfo: {
+        owner: 'larbish',
+        name: 'starter-larb',
+      },
     },
   },
 
@@ -39,15 +56,27 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/': { redirect: '/getting-started', prerender: false },
-  },
-
   future: {
     compatibilityVersion: 4,
   },
 
   compatibilityDate: '2024-07-09',
+
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true,
+    },
+    cloudflare: {
+      pages: {
+        routes: {
+          exclude: [
+            '/docs/*',
+          ],
+        },
+      },
+    },
+  },
 
   hub: {
     database: true,
@@ -57,14 +86,14 @@ export default defineNuxtConfig({
   icon: {
     clientBundle: {
       scan: true,
-      includeCustomCollections: true,
     },
-    provider: 'iconify',
+    serverBundle: 'local',
   },
 
   image: {
     provider: 'ipx',
   },
+
   ogImage: {
     zeroRuntime: true,
   },

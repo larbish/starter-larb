@@ -1,25 +1,15 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from 'ufo'
+import colors from 'tailwindcss/colors'
 
 const route = useRoute()
 const appConfig = useAppConfig()
+const colorMode = useColorMode()
 
-function mapPath(data) {
-  return data.map((item) => {
-    if (item.children) {
-      item.children = mapPath(item.children)
-    }
-    return {
-      ...item,
-      _path: item.path,
-    }
-  })
-}
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-  default: () => [],
-  transform: mapPath,
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
+const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
+  server: false,
 })
-const { data: files } = await useAsyncData('search', () => queryCollectionSearchSections('docs'))
 
 const searchTerm = ref('')
 
@@ -34,28 +24,22 @@ const searchTerm = ref('')
 const links = computed(() => {
   return [{
     label: 'Docs',
-    icon: 'i-heroicons-book-open',
-    to: '/getting-started',
-    active: route.path.startsWith('/getting-started') || route.path.startsWith('/components'),
-  }, {
-    label: 'Releases',
-    icon: 'i-heroicons-rocket-launch',
-    to: '/releases',
+    icon: 'i-lucide-book',
+    to: '/docs/getting-started',
+    active: route.path.startsWith('/docs'),
   }].filter(Boolean)
 })
 
-const radius = computed(() => `:root { --ui-radius: ${appConfig.theme.radius}rem; }`)
+const color = computed(() => colorMode.value === 'dark' ? colors[appConfig.ui.colors.neutral as keyof typeof colors][900] : 'white')
 
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { key: 'theme-color', name: 'theme-color', content: color },
   ],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' },
     { rel: 'canonical', href: `https://content.nuxt.com${withoutTrailingSlash(route.path)}` },
-  ],
-  style: [
-    { innerHTML: radius, id: 'nuxt-ui-radius', tagPriority: -2 },
   ],
   htmlAttrs: {
     lang: 'en',
@@ -71,38 +55,34 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <UApp :toaster="appConfig.toaster">
+  <UApp>
     <NuxtLoadingIndicator color="#FFF" />
 
-    <template v-if="!route.path.startsWith('/examples')">
-      <Banner />
-
-      <Header :links="links" />
-    </template>
+    <AppBanner />
+    <AppHeader :links="links" />
 
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
 
-    <template v-if="!route.path.startsWith('/examples')">
-      <Footer />
+    <AppFooter />
 
-      <ClientOnly>
-        <LazyUContentSearch
-          v-model:search-term="searchTerm"
-          :files="files"
-          :navigation="navigation"
-          :fuse="{ resultLimit: 42 }"
-        />
-      </ClientOnly>
-    </template>
+    <ClientOnly>
+      <LazyUContentSearch
+        v-model:search-term="searchTerm"
+        :files="files"
+        :navigation="navigation"
+        :fuse="{ resultLimit: 42 }"
+      />
+    </ClientOnly>
   </UApp>
 </template>
 
 <style>
+@import "tailwindcss";
 @import "@nuxt/ui-pro";
 
-@source "../content/**/*.md";
+@source "../content/**/*";
 
 @theme {
   --font-family-sans: 'Public Sans', sans-serif;
@@ -122,5 +102,12 @@ provide('navigation', navigation)
 
 :root {
   --ui-container-width: 90rem;
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-bg-muted: var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-900);
+  --ui-bg-accented: var(--ui-color-neutral-800);
 }
 </style>

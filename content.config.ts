@@ -3,10 +3,7 @@ import { defineCollection, z } from '@nuxt/content'
 export const collections = {
   docs: defineCollection({
     type: 'page',
-    source: {
-      include: 'docs/**',
-      prefix: '/docs',
-    },
+    source: 'docs/**',
     schema: z.object({
       links: z.array(z.object({
         label: z.string(),
@@ -20,9 +17,9 @@ export const collections = {
       })).optional(),
     }),
   }),
-  content: defineCollection({
-    type: 'data',
-    source: '*.yml',
+  home: defineCollection({
+    type: 'page',
+    source: 'index.yml',
     schema: z.object({
       hero: z.object({
         title: z.string(),

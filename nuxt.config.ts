@@ -1,8 +1,5 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import { createResolver } from '@nuxt/kit'
 import pkg from '../package.json'
-
-const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
   modules: [
@@ -27,6 +24,14 @@ export default defineNuxtConfig({
   },
 
   content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 4,
+          searchDepth: 4,
+        },
+      },
+    },
     database: {
       type: 'd1',
       binding: 'DB',
@@ -34,19 +39,20 @@ export default defineNuxtConfig({
       // url: process.env.TURSO_DATABASE_URL!,
       // authToken: process.env.TURSO_AUTH_TOKEN!,
     },
-  },
-
-  mdc: {
-    highlight: {
-      noApiRoute: false,
-    },
     studio: {
       enabled: true,
       dev: true,
       gitInfo: {
         owner: 'larbish',
         name: 'starter-larb',
+        url: 'https://github.com/larbish/starter-larb',
       },
+    },
+  },
+
+  mdc: {
+    highlight: {
+      noApiRoute: false,
     },
   },
 

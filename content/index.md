@@ -18,13 +18,13 @@ seo:
     ::::
   :::
 
-#title{unwrap="p"}
-The git-based CMS for:brNuxt projects.
+#title
+The git-based CMS for\:brNuxt projects.youhou
 
 #description
 Nuxt Content is a module for Nuxt that provides a simple way to manage content for your application. It allows developers to write their content in Markdown, YAML, or JSON files and then query and display it in their application.
 
-#links{unwrap="p"}
+#links
   :::u-button
   ---
   label: Get Started
@@ -54,10 +54,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-files
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   File-based CMS
   
-  #description{unwrap="p"}
+  #description
   Write your content in Markdown, YML, CSV or JSON and query it in your components.
   :::
 
@@ -67,10 +67,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-filter
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Query Builder
   
-  #description{unwrap="p"}
+  #description
   Query your content with a MongoDB-like API to fetch the right data at the right time.
   :::
 
@@ -80,10 +80,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-database
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   SQLite powered
   
-  #description{unwrap="p"}
+  #description
   Add custom fields to your content, making it suitable for various types of projects.
   :::
 
@@ -93,10 +93,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-simple-icons-markdown
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Markdown with Vue
   
-  #description{unwrap="p"}
+  #description
   Use Vue components in Markdown files, with props, slots and nested components.
   :::
 
@@ -106,10 +106,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-list-minus
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Code highlighting
   
-  #description{unwrap="p"}
+  #description
   Display beautiful code blocks on your website with the Shiki integration supporting VS Code themes.
   :::
 
@@ -119,10 +119,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-mouse-pointer-click
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Visual Editor
   
-  #description{unwrap="p"}
+  #description
   Let your team edit your Nuxt Content project with Nuxt Studio, our visual editor.
   :::
 
@@ -132,10 +132,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-panel-left
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Navigation Generation
   
-  #description{unwrap="p"}
+  #description
   Customize HTML typography tags with Vue components to give your content a consistent style.
   :::
 
@@ -145,10 +145,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-heading-1
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Prose Components
   
-  #description{unwrap="p"}
+  #description
   Nuxt Content works on all hosting providers, static, server, serverless & edge.
   :::
 
@@ -158,10 +158,10 @@ Nuxt Content is a module for Nuxt that provides a simple way to manage content f
   icon: i-lucide-globe
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Deploy everywhere
   
-  #description{unwrap="p"}
+  #description
   Generate a structured object from your content files and display a navigation menu in minutes.
   :::
 ::
@@ -256,7 +256,7 @@ We created the MDC syntax to let you use Vue components with props and slots ins
   icon: i-lucide-list
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Specify props with frontmatter syntax
   :::
 
@@ -266,7 +266,7 @@ We created the MDC syntax to let you use Vue components with props and slots ins
   icon: i-lucide-hash
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Use components slots with `#`
   :::
 
@@ -276,7 +276,7 @@ We created the MDC syntax to let you use Vue components with props and slots ins
   icon: i-lucide-code-xml
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Add any other html attributes
   :::
 
@@ -347,7 +347,7 @@ Define your content structure with collections and query them with schema valida
   icon: i-lucide-layout-grid
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Create collections for similar content files
   :::
 
@@ -357,7 +357,7 @@ Define your content structure with collections and query them with schema valida
   icon: i-lucide-circle-check
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Define schema for the collection front matter
   :::
 
@@ -367,7 +367,7 @@ Define your content structure with collections and query them with schema valida
   icon: i-lucide-text-cursor
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Get auto-completion in your Vue files
   :::
 
@@ -409,7 +409,7 @@ Edit your Nuxt Content website with our Notion-like Markdown editor with live pr
   icon: i-simple-icons-github
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Commit & push to GitHub with one click
   :::
 
@@ -419,7 +419,7 @@ Edit your Nuxt Content website with our Notion-like Markdown editor with live pr
   icon: i-simple-icons-google
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Invite editors to login with Google and publish changes
   :::
 
@@ -429,7 +429,7 @@ Edit your Nuxt Content website with our Notion-like Markdown editor with live pr
   icon: i-lucide-users
   variant: naked
   ---
-  #title{unwrap="p"}
+  #title
   Edit the content in real-time with your team
   :::
 

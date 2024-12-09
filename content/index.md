@@ -4,7 +4,7 @@ seo:
   description: Nuxt Content is a module for Nuxt that provides a simple way to
     manage content for your application. It allows developers to write their
     content in Markdown, YAML, or JSON files and then query and display it in
-    their application.
+    their application up.
 ---
 
 ::u-page-hero

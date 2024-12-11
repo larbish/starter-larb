@@ -297,7 +297,7 @@ orientation: horizontal
   :::
 
 #title
-[Edit together]{.text-[var(--ui-primary)]}, preview instantly
+[Edit together]{.text-[var(--ui-primary)]} , preview instantly
 
 #description
 Edit content as a team and see your site come to life with live preview. From text editing to component updates, every change reflects your final website design. Experience seamless content creation without delays or manual refreshes.

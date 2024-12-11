@@ -19,18 +19,17 @@ seo:
   :::
 
 #title{unwrap="p"}
-[Studio]{.text-[var(--ui-primary)]}, the content edition :br for everyone.
+The git-based CMS for :br Nuxt projects.
 
 #description
-Studio brings visual editing to your Nuxt Content projects, developers control the setup while teams edit visually. With smart editors that adapt to markdown, YAML, or JSON, anyone can contribute to the website – no technical expertise needed. \*\_Built for developers, made for everyone.\_\*
+Nuxt Content is a module for Nuxt that provides a simple way to manage content for your application. It allows developers to write their content in Markdown, YAML, or JSON files and then query and display it in their application.
 
 #links{unwrap="p"}
   :::u-button
   ---
-  label: Get Started for free
+  label: Get Started
   size: xl
-  target: _blank
-  to: https://nuxt.studio/signin
+  to: /docs/getting-started/installation
   trailingIcon: i-lucide-arrow-right
   ---
   :::
@@ -38,10 +37,10 @@ Studio brings visual editing to your Nuxt Content projects, developers control t
   :::u-button
   ---
   color: neutral
-  label: Read the documentation
+  label: Open Visual Editor
   size: xl
   target: _blank
-  to: /docs/studio/setup
+  to: https://nuxt.studio
   variant: subtle
   ---
   :::
@@ -52,156 +51,40 @@ Studio brings visual editing to your Nuxt Content projects, developers control t
   :::u-page-card
   ---
   inline: true
-  icon: i-lucide-circle-user
+  icon: i-lucide-files
   variant: naked
   ---
   #title{unwrap="p"}
-  GitHub & Google Authentication
+  File-based CMS
   
   #description{unwrap="p"}
-  Personalized workspace for each role: developers, writers, and clients.
+  Write your content in Markdown, YML, CSV or JSON and query it in your components.
   :::
 
   :::u-page-card
   ---
   inline: true
-  icon: i-lucide-file-pen
+  icon: i-lucide-filter
   variant: naked
   ---
   #title{unwrap="p"}
-  Easy content updates
+  Query Builder
   
   #description{unwrap="p"}
-  From Markdown to YAML edition, or visual editors are designed for non technical users.
+  Query your content with a MongoDB-like API to fetch the right data at the right time.
   :::
 
   :::u-page-card
   ---
   inline: true
-  icon: i-lucide-users
+  icon: i-lucide-database
   variant: naked
   ---
   #title{unwrap="p"}
-  Real-time Collaboration
+  SQLite powered
   
   #description{unwrap="p"}
-  Write as a team in real-time with our collaboration features.
-  :::
-
-  :::u-page-card
-  ---
-  inline: true
-  icon: i-lucide-sparkles
-  variant: naked
-  ---
-  #title{unwrap="p"}
-  From Code to Edition
-  
-  #description{unwrap="p"}
-  Developers build the foundation while writers can safely edit the content.
-  :::
-
-  :::u-page-card
-  ---
-  inline: true
-  icon: i-lucide-panels-top-left
-  variant: naked
-  ---
-  #title{unwrap="p"}
-  Review before publishing
-  
-  #description{unwrap="p"}
-  Review your changes before making them live on your website.
-  :::
-
-  :::u-page-card
-  ---
-  inline: true
-  icon: i-lucide-mouse-pointer-click
-  variant: naked
-  ---
-  #title{unwrap="p"}
-  Ready-to-use Templates
-  
-  #description{unwrap="p"}
-  Get started quickly with pre-built templates for Saas sites, blogs, docs and more.
-  :::
-::
-
-::u-page-section
----
-orientation: horizontal
----
-  :::code-group
-  ```vue [components/content/HomeFeature.vue]
-  <template>
-    <div class="flex items-start gap-3">
-      <div class="flex items-center justify-center border rounded-lg p-1.5">
-        <UIcon :name="icon" />
-      </div>
-      <div class="flex flex-col">
-        <h3 class="font-semibold">
-          <ContentSlot name="title" />
-        </h3>
-        <span>
-          <ContentSlot name="description" />
-        </span>
-      </div>
-    </div>
-  </template>
-  
-  <script setup lang="ts">
-  defineProps({
-    icon: {
-      type: String,
-      default: 'i-ph-cursor-click',
-    },
-  })
-  </script>
-  ```
-  
-  ```mdc [content/index.md]
-  ::home-feature
-    ---
-    icon: i-mdi-vuejs
-    ---
-    #title
-    Embedded Vue components
-    #description
-    Edit slots and props inside the Notion-like editor.
-  ::
-  ```
-  
-    ::::preview-card{icon="i-lucide-eye" label="Editor"}
-    ![vue component edition on Studio](/docs/studio/home-content-studio-dark.webp)
-    ::::
-  :::
-
-#title{unwrap="p"}
-Developers create the [editing experience]{.text-[var(--ui-primary)]}
-
-#description
-Developers build the foundation their way: custom components, media library, and site configuration.
-
-#features
-  :::u-page-card
-  ---
-  inline: true
-  icon: i-lucide-settings-2
-  variant: naked
-  ---
-  #title{unwrap="p"}
-  Customizable and editable Vue components
-  :::
-
-  :::u-page-card
-  ---
-  inline: true
-  icon: i-lucide-brush
-  variant: naked
-  ---
-  #title{unwrap="p"}
-  Edit your app.config visually
+  Add custom fields to your content, making it suitable for various types of projects.
   :::
 
   :::u-page-card
@@ -211,15 +94,198 @@ Developers build the foundation their way: custom components, media library, and
   variant: naked
   ---
   #title{unwrap="p"}
-  Edit your Markdown with our visual editor
+  Markdown with Vue
+  
+  #description{unwrap="p"}
+  Use Vue components in Markdown files, with props, slots and nested components.
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-list-minus
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Code highlighting
+  
+  #description{unwrap="p"}
+  Display beautiful code blocks on your website with the Shiki integration supporting VS Code themes.
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-mouse-pointer-click
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Visual Editor
+  
+  #description{unwrap="p"}
+  Let your team edit your Nuxt Content project with Nuxt Studio, our visual editor.
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-panel-left
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Navigation Generation
+  
+  #description{unwrap="p"}
+  Customize HTML typography tags with Vue components to give your content a consistent style.
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-heading-1
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Prose Components
+  
+  #description{unwrap="p"}
+  Nuxt Content works on all hosting providers, static, server, serverless & edge.
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-globe
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Deploy everywhere
+  
+  #description{unwrap="p"}
+  Generate a structured object from your content files and display a navigation menu in minutes.
+  :::
+::
+
+::u-page-section
+#title
+Everything you need for content management
+
+#description
+Combine file-based simplicity with Vue component power. Build content-rich websites, from documentation pages to complex applications.
+
+  :::div{.hidden.sm:block}
+    ::::u-color-mode-image
+    ---
+    class: size-full absolute top-0 inset-x-4
+    dark: /home/features-dark.svg
+    light: /home/features-light.svg
+    ---
+    ::::
+  :::
+::
+
+::u-page-section
+---
+reverse: true
+orientation: horizontal
+---
+  :::code-group
+    ::::preview-card{.!h-[458px] icon="i-lucide-eye" label="Preview"}
+      :::::example-landing-hero
+      ---
+      class: "!h-[458px]"
+      image: /images/everest.jpg
+      ---
+      #title
+      The Everest.
+      
+      #description
+      The Everest is the highest mountain in the world, standing at 8,848 meters above sea level.
+      :::::
+    ::::
+  
+  ```mdc [content/index.md]
+  ---
+  title: The Mountains Website
+  description: A website about the most iconic mountains in the world.
+  ---
+  
+  ::landing-hero
+  ---
+  image: /images/everest.png
+  ---
+  #title
+  The Everest.
+  
+  #description
+  The Everest is the highest mountain in the world, standing at 8,848 meters above sea level.
+  ::
+  ```
+  
+  ```vue [components/LandingHero.vue]
+  <script setup lang="ts">
+  defineProps<{ image: string }>()
+  </script>
+  
+  <template>
+    <section class="flex flex-col sm:flex-row sm:items-center flex-col-reverse gap-4 py-8 sm:gap-12 sm:py-12">
+      <div>
+        <h1 class="text-4xl font-semibold">
+          <slot name="title" />
+        </h1>
+        <div class="text-base text-gray-600 dark:text-gray-300">
+          <slot name="description" />
+        </div>
+      </div>
+      <img :src="image" class="w-1/2 rounded-lg">
+    </section>
+  </template>
+  ```
+  :::
+
+#title
+Markdown meets [Vue]{.text-[var(--ui-primary)]} components
+
+#description
+We created the MDC syntax to let you use Vue components with props and slots inside your Markdown files.
+
+#features
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-list
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Specify props with frontmatter syntax
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-hash
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Use components slots with `#`
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-code-xml
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Add any other html attributes
   :::
 
 #links
   :::u-button
   ---
   color: neutral
-  label: Learn more about custom components
-  to: /docs/files/markdown#vue-components
+  label: Learn more about MDC
+  to: /docs/files/markdown#mdc-syntax
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
@@ -230,13 +296,51 @@ Developers build the foundation their way: custom components, media library, and
 ---
 orientation: horizontal
 ---
-:video{autoplay controls loop poster="/assets/home/videos/HomeNotionLikePoster.webp" src="https://res.cloudinary.com/nuxt/video/upload/v1733494722/contentv3final_rc8bvu.mp4"}
+  :::code-group
+  ```vue [pages/blog.vue]
+  <script setup lang="ts">
+  const { data: posts } = await useAsyncData('blog', () => {
+    return queryCollection('blog').all()
+  })
+  </script>
+  
+  <template>
+    <div>
+      <h1>Blog</h1>
+      <ul>
+        <li v-for="post in posts" :key="post.id">
+          <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
+        </li>
+      </ul>
+    </div>
+  </template>
+  ```
+  
+  ```ts [content.config.ts]
+  import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+  
+  export default defineContentConfig({
+    collections: {
+      blog: defineCollection({
+        source: 'blog/*.md',
+        type: 'page',
+        // Define custom schema for docs collection
+        schema: z.object({
+          tags: z.array(z.string()),
+          image: z.string(),
+          date: z.Date()
+        })
+      })
+    }
+  })
+  ```
+  :::
 
-#title{unwrap="p"}
-Let [anyone edit]{.text-[var(--ui-primary)]} your Nuxt Content website
+#title
+Query with [Type-Safety]{.text-[var(--ui-secondary)]}
 
 #description
-Teams and clients get a powerful visual editor for content management, with real-time collaboration and draft systems - all without touching code.
+Define your content structure with collections and query them with schema validation and full type-safety.
 
 #features
   :::u-page-card
@@ -286,16 +390,11 @@ Teams and clients get a powerful visual editor for content management, with real
 reverse: true
 orientation: horizontal
 ---
-  :::u-color-mode-image
-  ---
-  class: size-full
-  dark: /home/pro-dark.svg
-  light: /home/pro-light.svg
-  ---
-  :::
+:video{autoplay controls loop src="https://res.cloudinary.com/nuxt/video/upload/v1733494722/contentv3final_rc8bvu.mp4"}
 
-#title
-Make changes [without technical skills]{.text-[var(--ui-primary)]}
+ 
+#title{unwrap="p"}
+Let [anyone edit]{.text-[var(--ui-primary)]} your website
 
 #description
 Edit your Nuxt Content website with **Studio**, our CMS platform with Notion-like Markdown editors and generated forms for `YAML` and `JSON` files. Live preview and online collaboration included.
@@ -304,11 +403,21 @@ Edit your Nuxt Content website with **Studio**, our CMS platform with Notion-lik
   :::u-page-card
   ---
   inline: true
-  icon: i-simple-icons-github
+  icon: i-lucide-mouse-pointer-click
   variant: naked
   ---
   #title{unwrap="p"}
-  Commit & push to GitHub with one click
+  Visual editor with drag and drop for Markdown
+  :::
+
+  :::u-page-card
+  ---
+  inline: true
+  icon: i-lucide-file-text
+  variant: naked
+  ---
+  #title{unwrap="p"}
+  Form generation for YML and JSON files
   :::
 
   :::u-page-card
@@ -321,22 +430,12 @@ Edit your Nuxt Content website with **Studio**, our CMS platform with Notion-lik
   Invite editors to login with Google and let them publish their changes
   :::
 
-  :::u-page-card
-  ---
-  inline: true
-  icon: i-lucide-users
-  variant: naked
-  ---
-  #title{unwrap="p"}
-  Edit the content in real-time with your team
-  :::
-
 #links
   :::u-button
   ---
   color: neutral
   label: Discover Studio
-  to: https://nuxt.studio
+  to: /studio
   trailingIcon: i-lucide-arrow-right
   ---
   :::

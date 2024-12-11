@@ -1,17 +1,45 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
-// import type { NavigationMenuItem } from '@nuxt/ui'
-
-// const props = defineProps<{
-//   links: NavigationMenuItem[]
-// }>()
 
 const config = useRuntimeConfig().public
 
-const nav = inject<Ref<ContentNavigationItem[]>>('navigation')
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
-// const items = computed(() => props.links.map(({ icon, ...link }) => link))
-const navigation = computed(() => nav?.value.find(item => item.path === '/docs')?.children || [])
+const items = ref([
+  {
+    label: 'Docs',
+    to: '/docs/getting-started/installation',
+  },
+  {
+    label: 'Studio',
+    to: '/studio',
+    children: [
+      {
+        label: 'Features',
+        icon: 'i-lucide-file-pen-line',
+        to: '/studio',
+      },
+      {
+        label: 'Pricing',
+        icon: 'i-lucide-rocket',
+        to: '/studio/pricing',
+      },
+      {
+        label: 'Templates',
+        icon: 'i-lucide-panels-top-left',
+        to: '/studio/templates',
+      },
+    ],
+  },
+  {
+    label: 'Blog',
+    to: '/blog',
+  },
+  {
+    label: 'Changelog',
+    to: '/changelog',
+  },
+])
 
 defineShortcuts({
   meta_g: () => {
@@ -52,10 +80,10 @@ defineShortcuts({
       </NuxtLink>
     </template>
 
-    <!-- <UNavigationMenu
+    <UNavigationMenu
       :items="items"
-      variant="link"
-    /> -->
+      class="justify-center"
+    />
 
     <template #right>
       <UButton
@@ -95,7 +123,10 @@ defineShortcuts({
 
       <USeparator type="dashed" class="my-4" /> -->
 
-      <UContentNavigation :navigation="navigation" />
+      <UContentNavigation
+        highlight
+        :navigation="navigation"
+      />
     </template>
   </UHeader>
 </template>
